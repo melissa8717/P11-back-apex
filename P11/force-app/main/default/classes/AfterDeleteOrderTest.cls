@@ -1,11 +1,11 @@
 @isTest
 public class AfterDeleteOrderTest {
 	 @isTest static void test() {
-    	List<Account> accList = DataTestFactory.createAccount();
+    	List<Account> accList = DataTestFactory.createAccount(1,false);
         insert accList;
         
         List<Order> ordList = new List<Order>();	
-        ordList.addAll(DataTestFactory.createOrder(accList[0].id));
+        ordList.addAll(DataTestFactory.createOrder(20,false, accList[0].id));
         insert ordList;
          
         Product2 product = DataTestFactory.createProduct();

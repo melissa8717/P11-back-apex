@@ -3,7 +3,7 @@ public class AccountWithoutOrderAndTaskBatchTest {
 	@testSetup
     static void setup(){
     
-        List<Account> accList = DataTestFactory.createAccount();
+        List<Account> accList = DataTestFactory.createAccount(1, false);
         insert accList;
         accList[0].Active__c = false;
         update accList[0];
@@ -28,7 +28,7 @@ public class AccountWithoutOrderAndTaskBatchTest {
         	String jobId = System.schedule('ScheduledApexTest',
             CRON_EXP,
             new AccountScheduleBatch());
-        	taskList.addAll(DataTestFactory.createTask(accountId, accounts[0].OwnerId));       
+        	taskList.addAll(DataTestFactory.createTask(1, false,accountId, accounts[0].OwnerId));       
         }
         
         insert taskList;
