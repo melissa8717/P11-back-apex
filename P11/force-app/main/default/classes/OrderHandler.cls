@@ -1,4 +1,10 @@
 public class OrderHandler {
+
+/**
+    * @description verify if an account have any order
+    * @param List<Order>orders 
+    * @return void
+    **/
     public void verifyOrder(List<Order>orders){
         List<Id>accountId = new List<Id>();
         for(Order ord: orders){

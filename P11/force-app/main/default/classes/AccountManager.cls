@@ -6,6 +6,12 @@
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public class AccountManager {
+
+/**
+    * @description method create task if an account doesnt have any
+    * @param Set<Id> List<Account> accounts
+    * @return List<Task> tasks
+    **/
     public List<Task> taskAccount(List<Account> accounts){
                   //select WhatId from Task Where 
         Map<Id,String> mapAccounts = new Map<Id,String>();
