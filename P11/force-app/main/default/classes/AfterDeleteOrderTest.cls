@@ -1,10 +1,3 @@
-/**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 09-17-2023
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
-**/
 @isTest
 public class AfterDeleteOrderTest {
 	 @isTest static void test() {
@@ -30,15 +23,13 @@ public class AfterDeleteOrderTest {
          
         Test.startTest();
 		Database.DeleteResult result = Database.delete(ordList[0], false);
-        if(result.getErrors().size() == 0){
-            if(accList[0].Active__c!='false'){
-        	accList[0].Active__c = 'false';
-            }
+        if(result.getErrors().size() == 0 && accList[0].Active__c != false){
+        	accList[0].Active__c = false;
         	update accList;
         }
         Test.stopTest();
          
-        System.assertEquals('false',accList[0].Active__c);
+        System.assertEquals(false,accList[0].Active__c);
   
     }
 

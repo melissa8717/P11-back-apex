@@ -1,10 +1,3 @@
-/**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 09-17-2023
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
-**/
 @isTest
 public class AccountWithoutOrderAndTaskBatchTest {
 	@testSetup
@@ -12,7 +5,7 @@ public class AccountWithoutOrderAndTaskBatchTest {
     
         List<Account> accList = DataTestFactory.createAccount();
         insert accList;
-        accList[0].Active__c ='false';
+        accList[0].Active__c = false;
         update accList[0];
         
     }
