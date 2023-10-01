@@ -45,10 +45,13 @@ public class DataTestFactory {
         }
         return orders;
     }
-    public static List<OrderItem> createOrderItem(Id orderId,Id product2Id, Id standardpriceId){
+    
+   public static List<OrderItem> createOrderItem(Integer itOrdItem,Id orderId,Id product2Id, Id standardpriceId){
         List<OrderItem> orderItems = new List<OrderItem>();
-        for(Integer i=0;i<20;i++){
-            orderItems.add(new OrderItem(Product2id = product2Id,PriceBookEntryId=standardpriceId, Quantity =1, OrderId = orderId, UnitPrice=1000));
+        for(Integer i=0;i<itOrdItem;i++){
+            orderItems.add(new OrderItem(Product2id = product2Id,
+                                         PriceBookEntryId=standardpriceId, 
+                                         Quantity =1, OrderId = orderId, UnitPrice=1000));
   
         }
         return orderItems;
