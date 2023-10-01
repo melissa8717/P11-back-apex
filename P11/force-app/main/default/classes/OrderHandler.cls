@@ -11,14 +11,15 @@ public class OrderHandler {
             accountId.add(ord.AccountId);
         }
         Integer numberOrder = [SELECT count() FROM Order WHERE AccountId IN :accountId];
-        Account acc = [SELECT id, Active__c FROM Account WHERE Id In :accountId];
+        List<Account> accList = [SELECT id, Active__c FROM Account WHERE Id In :accountId];
         for(Integer i =0; i<orders.size();i++){
             
-            if(numberOrder == 0 && acc.Active__c != false){
-               acc.Active__c = false;
+            if(numberOrder == 0 && accList[i].Active__c != false){
+               accList[i].Active__c = false;
             }
         }
-        update acc;
+        update accList;
     }
+
 
 }
