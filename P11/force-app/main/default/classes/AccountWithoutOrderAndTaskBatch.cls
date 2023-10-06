@@ -9,7 +9,7 @@ global class AccountWithoutOrderAndTaskBatch implements Database.Batchable<sObje
     
     global Database.QueryLocator start(Database.BatchableContext info){ 
  
-        return Database.getQueryLocator('SELECT Id,Name, Active__c FROM Account Where Active__c = \'false\' ');
+        return Database.getQueryLocator('SELECT Id,Name, Active__c, OwnerId FROM Account Where Active__c = false');
     }
     global void execute(Database.BatchableContext info, List<Account> listAccounts){ 
        

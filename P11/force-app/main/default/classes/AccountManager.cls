@@ -27,7 +27,8 @@ public class AccountManager {
                    tasks.add(new Task(WhatId=acc.Id,Subject='Call',Status='Not Started',
                                      Priority='Normal',IsReminderSet=true,
                                      RecurrenceInterval=5,
-                                     RecurrenceRegeneratedType='After due date', 
+                                     RecurrenceRegeneratedType='RecurrenceRegenerateAfterDueDate', 
+                                     ActivityDate=System.Today(),
                                      OwnerId = acc.OwnerId));
                 	
                 
