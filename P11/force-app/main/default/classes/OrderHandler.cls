@@ -12,10 +12,10 @@ public class OrderHandler {
         }
         Integer numberOrder = [SELECT count() FROM Order WHERE AccountId IN :accountId];
         List<Account> accList = [SELECT id, Active__c FROM Account WHERE Id In :accountId];
-        for(Integer i =0; i<orders.size();i++){
+        if(numberOrder == 0){
+            for(Account acc : accList){
             
-            if(numberOrder == 0 && accList[i].Active__c != false){
-               accList[i].Active__c = false;
+               acc.Active__c = false;
             }
         }
         update accList;

@@ -42,7 +42,9 @@ public class AfterDeleteOrderTest {
         Test.stopTest();
          
         Assert.areEqual(0, deleteSize);
-        Assert.areEqual(false,accList[0].Active__c);
+        
+        List<Account> accInactive = [SELECT id Active__c FROM Account WHERE Active__c = false];
+        Assert.areEqual(101, accInactive.size();
   
     }
 
