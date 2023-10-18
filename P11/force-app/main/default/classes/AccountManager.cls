@@ -1,5 +1,5 @@
 /**
- * @description       : 
+ * @description       : method create task if an account doesnt have any order and task
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
  * @last modified on  : 09-10-2023
@@ -14,8 +14,7 @@ public class AccountManager {
     **/
     public List<Task> taskAccount(List<Account> accounts){
         Map<Id,String> mapAccounts = new Map<Id,String>();
-        List<Contact> resultContact =null;
-        resultContact = [select AccountId,Name from Contact];
+        List<Contact> resultContact = [select AccountId,Name from Contact];
         for(Contact c : resultContact){
             mapAccounts.put((Id)c.get('AccountId'), (String)c.get('Name'));
         }
